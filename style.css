@@ -60,7 +60,7 @@ h1 {
     display: inline-block;
     animation: yidon 5s infinite;
     transform: translateY(40%);
-    z-index: 180;
+    z-index: 900;
 }
 
 .rose-relative {
