@@ -1,0 +1,436 @@
+:root {
+    --bg: #000;
+    --tab-bg: #f9f9f9;
+    --f-color: #ba9872;
+    --s-color: #967b5c;
+    --t-color: #a38564;
+    --fo-color: #f9f9f9;
+    --fi-color: #e2e2e2;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #fadede;
+}
+
+h1 {
+    font-family: "Sacramento", cursive;
+    color: #fe7696;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5.8rem;
+
+    overflow: hidden;
+}
+
+.letter {
+    width: 60%;
+}
+
+.letter h1 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.container__message {
+    width: 90%;
+}
+
+/* --- ROSA --- */
+.rose {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    display: inline-block;
+    animation: yidon 5s infinite;
+    transform: translateY(40%);
+    z-index: 180;
+}
+
+.rose-relative {
+    position: relative;
+}
+
+.rose:nth-child(1) {
+    top: -15px;
+    right: -72px;
+}
+
+.rose:nth-child(4) {
+    bottom: 142px;
+    left: 45px;
+}
+
+.petal {
+    width: 50px;
+    height: 50px;
+    background: #fe7696;
+    border-radius: 0px 50%;
+    position: absolute;
+    box-shadow: 0 0 10px #d1123f;
+    z-index: 2;
+    transform-origin: bottom right;
+    animation: zhankai2 10s infinite;
+}
+
+.petal:nth-child(2) {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    background: #fe7696;
+    left: -10px;
+    animation: zhankai1 10s infinite;
+}
+
+.petal:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    left: 10px;
+    top: -20px;
+    z-index: 1;
+    background: #f03a64;
+    transform-origin: bottom right;
+    animation: zhankai2 10s infinite;
+}
+
+.petal:nth-child(4) {
+    transform: rotate(90deg);
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    top: -20px;
+    z-index: 1;
+    background: #f03a64;
+    transform-origin: bottom right;
+    animation: zhankai1 10s infinite;
+}
+
+.petal:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    left: 20px;
+    top: -30px;
+    z-index: 0;
+    background: #d1123f;
+}
+
+.leaf {
+    position: absolute;
+    top: 84px;
+    left: -123px;
+}
+
+.stem {
+    width: 240px;
+    height: 108px;
+    background: transparent;
+    border: 8px solid #8ac78a;
+    border-color: #77a377 transparent transparent transparent;
+    border-radius: 50% 50%;
+    transform: rotate(100deg);
+}
+
+.leafs {
+    width: 50px;
+    height: 40px;
+    border-radius: 0px 50%;
+    background: #77a377;
+    position: absolute;
+    top: 0;
+    left: 117.5px;
+    z-index: 49;
+}
+
+.leafs:nth-child(2) {
+    width: 40px;
+    height: 20px;
+    top: 42px;
+    left: 170px;
+    transform: rotate(120deg);
+}
+
+@keyframes yidon {
+    50% {
+        transform: translateY(35%);
+    }
+    100% {
+        transform: translateY(40%);
+    }
+}
+
+@keyframes zhankai1 {
+    50% {
+        transform: rotate(110deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes zhankai2 {
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+/* -------- */
+
+/* --- ENVELOP --- */
+.envelop {
+    width: 30rem;
+    height: 20rem;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.envelop:not(.open) {
+    overflow: hidden;
+}
+
+.envelop__front-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    border: 0.35rem solid var(--s-color);
+    background-color: var(--f-color);
+    clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
+    z-index: 300;
+}
+
+.envelop__back-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    background-color: var(--s-color);
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
+    z-index: 100;
+}
+
+.envelop__up-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    border-radius: 0.7rem;
+    background-color: var(--s-color);
+    z-index: 400;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
+}
+
+.envelop__sticker {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 400;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-repeat: repeat;
+    background-color: var(--fo-color);
+    border: 0.3rem solid var(--fi-color);
+    background-size: 2rem;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.envelop__false-sticker {
+    width: 20%;
+    height: 15%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 80%;
+    bottom: 0;
+    right: 0;
+    z-index: 300;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: var(--fo-color);
+    border: 0.3rem solid var(--fi-color);
+    background-size: 2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.envelop__content {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 200;
+}
+
+/* -- Love Notes --- */
+.love-notes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: auto;
+}
+
+.note {
+    width: 95%;
+    height: 30%;
+    background-color: var(--tab-bg);
+    position: absolute;
+    overflow: hidden;
+    transition: height 0.5s, opacity 0.25s;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.note__text {
+    padding: 1rem;
+}
+
+.note__text p {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* --- Cursors --- */
+.scissors {
+    cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png") 50 50, pointer;
+}
+
+.scissors:active {
+    cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png") 50 38, pointer;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+/* --- medias queries --- */
+
+@media (max-width: 850px) {
+    .container {
+        gap: 1.8rem;
+    }
+
+    .letter h1 {
+        font-size: 2.8rem;
+    }
+
+    /* --- rosas --- */
+    .rose {
+        width: 100px;
+        height: 100px;
+    }
+
+    .rose:nth-child(1) {
+        top: -10px;
+        right: -35px;
+    }
+
+    .rose:nth-child(4) {
+        bottom: calc(10px + env(safe-area-inset-bottom));
+        left: 6%;
+    }
+
+    .petal {
+        width: 25px;
+        height: 25px;
+    }
+
+    .petal:nth-child(2) {
+        left: -5px;
+    }
+
+    .petal:nth-child(3),
+    .petal:nth-child(4) {
+        width: 20px;
+        height: 20px;
+        top: -10px;
+        left: 5px;
+    }
+
+    .petal:nth-child(4) {
+        left: 0;
+    }
+
+    .petal:nth-child(5) {
+        width: 25px;
+        height: 25px;
+        left: 10px;
+        top: -15px;
+        border-radius: 10px;
+    }
+
+    .stem {
+        width: 120px;
+        height: 45px;
+        border-width: 4px;
+    }
+
+    .leaf {
+        top: 48px;
+        left: -58px;
+    }
+
+    .leafs {
+        width: 25px;
+        height: 20px;
+        left: 54.4px;
+        top: -5px;
+    }
+
+    .leafs:nth-child(2) {
+        width: 20px;
+        height: 10px;
+        top: 13px;
+        left: 81px;
+    }
+
+    /* --- envelop --- */
+    .envelop {
+        width: 90vw;
+        max-width: 30rem;
+        aspect-ratio: 3 / 1;
+    }
+
+    .note__text {
+        padding: 0.5rem;
+    }
+
+    .note__text p {
+        font-size: 1.2rem;
+    }
+}
