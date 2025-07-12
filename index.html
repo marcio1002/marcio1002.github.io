@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Beatriz minha linda</title>
+        <link href="https://fonts.font.im/css?family=Sacramento" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sacramento&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg: #000;
+                --tab-bg: #f9f9f9;
+                --f-color: #ba9872;
+                --s-color: #967b5c;
+                --t-color: #a38564;
+                --fo-color: #f9f9f9;
+                --fi-color: #e2e2e2;
+            }
+
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: #fadede;
+            }
+
+            h1 {
+                font-family: "Sacramento", cursive;
+                color: #fe7696;
+            }
+
+            .container {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5.8rem;
+            }
+
+            .letter {
+                width: 60%;
+            }
+
+            .letter h1 {
+                text-align: center;
+                font-size: 4rem;
+            }
+
+            .container__message {
+                width: 90%;
+            }
+
+            /* --- ROSA --- */
+            .rose {
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                display: inline-block;
+                animation: yidon 5s infinite;
+                transform: translateY(40%);
+                z-index: 1000;
+            }
+
+            .rose:nth-child(1) {
+                top: 0%;
+                right: -4%;
+            }
+
+            .rose:nth-child(3) {
+                bottom: 18%;
+                left: 6%;
+            }
+
+            .petal {
+                width: 50px;
+                height: 50px;
+                background: #fe7696;
+                border-radius: 0px 50%;
+                position: absolute;
+                box-shadow: 0 0 10px #d1123f;
+                z-index: 2;
+                transform-origin: bottom right;
+                animation: zhankai2 10s infinite;
+            }
+
+            .petal:nth-child(2) {
+                transform-origin: right bottom;
+                transform: rotate(90deg);
+                background: #fe7696;
+                left: -10px;
+                animation: zhankai1 10s infinite;
+            }
+
+            .petal:nth-child(3) {
+                width: 40px;
+                height: 40px;
+                left: 10px;
+                top: -20px;
+                z-index: 1;
+                background: #f03a64;
+                transform-origin: bottom right;
+                animation: zhankai2 10s infinite;
+            }
+
+            .petal:nth-child(4) {
+                transform: rotate(90deg);
+                width: 40px;
+                height: 40px;
+                left: 0px;
+                top: -20px;
+                z-index: 1;
+                background: #f03a64;
+                transform-origin: bottom right;
+                animation: zhankai1 10s infinite;
+            }
+
+            .petal:nth-child(5) {
+                width: 50px;
+                height: 50px;
+                border-radius: 20px;
+                left: 20px;
+                top: -30px;
+                z-index: 0;
+                background: #d1123f;
+            }
+
+            .leaf {
+                position: absolute;
+                top: 120px;
+                left: -104px;
+            }
+
+            .stem {
+                width: 240px;
+                height: 40px;
+                background: transparent;
+                border: 8px solid #8ac78a;
+                border-color: #77a377 transparent transparent transparent;
+                border-radius: 50% 50%;
+                transform: rotate(100deg);
+            }
+
+            .leafs {
+                width: 50px;
+                height: 40px;
+                border-radius: 0px 50%;
+                background: #77a377;
+                position: absolute;
+                top: 0;
+                left: 78.5px;
+                z-index: 49;
+            }
+
+            .leafs:nth-child(2) {
+                width: 40px;
+                height: 20px;
+                top: 40px;
+                left: 129px;
+                transform: rotate(120deg);
+            }
+
+            @keyframes yidon {
+                50% {
+                    transform: translateY(35%);
+                }
+                100% {
+                    transform: translateY(40%);
+                }
+            }
+
+            @keyframes zhankai1 {
+                50% {
+                    transform: rotate(110deg);
+                }
+                100% {
+                    transform: rotate(90deg);
+                }
+            }
+
+            @keyframes zhankai2 {
+                50% {
+                    transform: rotate(-20deg);
+                }
+                100% {
+                    transform: rotate(0deg);
+                }
+            }
+            /* -------- */
+
+            /* --- ENVELOP --- */
+            .envelop {
+                width: 30rem;
+                height: 20rem;
+                position: relative;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            .envelop__front-paper {
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                border-radius: 0.7rem;
+                border: 0.35rem solid var(--s-color);
+                background-color: var(--f-color);
+                clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
+                z-index: 300;
+            }
+
+            .envelop__back-paper {
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                border-radius: 0.7rem;
+                background-color: var(--s-color);
+                clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
+                z-index: 100;
+            }
+
+            .envelop__up-paper {
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                left: 0;
+                position: relative;
+                border-radius: 0.7rem;
+                background-color: var(--s-color);
+                z-index: 400;
+                clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
+            }
+
+            .envelop__sticker {
+                width: 100%;
+                height: 15%;
+                position: absolute;
+                margin: auto;
+                top: 30%;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 400;
+                background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+                background-repeat: repeat;
+                background-color: var(--fo-color);
+                border: 0.3rem solid var(--fi-color);
+                background-size: 2rem;
+                background-position: center;
+                background-repeat: repeat;
+            }
+
+            .envelop__false-sticker {
+                width: 20%;
+                height: 15%;
+                position: absolute;
+                margin: auto;
+                top: 30%;
+                left: 80%;
+                bottom: 0;
+                right: 0;
+                z-index: 300;
+                background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+                background-color: var(--fo-color);
+                border: 0.3rem solid var(--fi-color);
+                background-size: 2rem;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .envelop__content {
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                z-index: 200;
+            }
+
+            /* -- Love Notes --- */
+            .love-notes {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .note {
+                width: 95%;
+                height: 30%;
+                background-color: var(--tab-bg);
+                position: absolute;
+                overflow: hidden;
+                transition: height 0.5s, opacity 0.25s;
+                box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+            }
+
+            .note:hover {
+                cursor: pointer;
+                height: 45%;
+            }
+
+            .note__text {
+                padding: 1rem;
+            }
+
+            .note__text p {
+                font-family: "Dancing Script", cursive;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+
+            /* --- Cursors --- */
+            .scissors {
+                cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png"), pointer;
+            }
+
+            .scissors:active {
+                cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png"), pointer;
+            }
+
+            .cursor {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="letter">
+                <h1>Para Beatriz Alves</h1>
+            </div>
+
+            <div class="container__message">
+                <div class="rose">
+                    <div class="flower">
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                    </div>
+                    <div class="leaf">
+                        <div class="stem"></div>
+                        <div class="leafs"></div>
+                        <div class="leafs"></div>
+                    </div>
+                </div>
+
+                <div class="envelop scissors">
+                    <div class="envelop__front-paper"></div>
+                    <div class="envelop__back-paper"></div>
+                    <div class="envelop__up-paper js-up-paper"></div>
+                    <div class="envelop__sticker js-sticker"></div>
+                    <div class="envelop__false-sticker"></div>
+                    <div class="envelop__content js-envelop-content">
+                        <div class="love-notes"></div>
+                    </div>
+                </div>
+
+                <div class="rose">
+                    <div class="flower">
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                    </div>
+                    <div class="leaf">
+                        <div class="stem"></div>
+                        <div class="leafs"></div>
+                        <div class="leafs"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+        <script>
+            const messages = [
+                [
+                    `Oi minha princesa!\n Essa carta é pra te dizer o quanto eu estou apaixonado por você, cada detalhe seu, sua forma de ser, seu jeito de falar, seu sorriso, seu jeitinho meigo e leve que me fascina.`,
+                    ``,
+                ],
+                ["Minha princesa &hearts;"],
+            ];
+
+            let mobile_media_query = window.matchMedia("(max-width: 400px)");
+            let tablet_media_query = window.matchMedia("(min-width: 400px) and (max-width: 600px)");
+            let notes = document.querySelectorAll(".js-note");
+
+            function add_notes() {
+                const offset = 30; // distância vertical entre notas
+                const base = 20; // posição da primeira nota (mais embaixo)
+
+                messages.forEach((Ps, index) => {
+                    console.log("messages", Ps);
+                    const elemPs = Ps.map((m) => `<p>${m}</p>`).join("\n");
+
+                    const note = document.createElement("div");
+                    note.classList.add("note", "js-note");
+                    note.style.bottom = `${base + offset * (messages.length - 1 - index)}%`;
+                    note.style.zIndex = 100 + index;
+                    note.innerHTML = `
+                    <div class="note__text">
+                        ${elemPs}
+                    </div>
+                    `;
+
+                    document.querySelector(".love-notes").append(note);
+                });
+
+                notes = document.querySelectorAll(".js-note");
+            }
+
+            function resize_notes() {
+                notes.forEach((note) => {
+                    if (!note.classList.contains("active")) return;
+
+                    note.classList.remove("active");
+                    gsap.set(note, { height: "30%", clearProps: "all" });
+                });
+            }
+
+            /**
+             *
+             * @param {HTMLElement} node
+             * @param {number} height
+             */
+            function show_node(node, height) {
+                notes.forEach((n) => {
+                    if (!n.classList.contains("active")) return;
+
+                    n.classList.remove("active");
+                    gsap.set(n, {
+                        height: "30%",
+                    });
+                });
+
+                node.classList.add("active");
+                gsap.set(node, { height: `${height}%` });
+            }
+
+            function hide_node(node) {
+                node.classList.remove("active");
+
+                gsap.set(node, { height: "30%" });
+            }
+
+            function show_or_hide_note(node, index) {
+                const toggle_node = (height) =>
+                    node.classList.contains("active") ? hide_node(node) : show_node(node, height);
+
+                if (mobile_media_query.matches) {
+                    toggle_node(125 + 40 * index);
+                } else if (tablet_media_query.matches) {
+                    toggle_node(80 + 21 * index);
+                } else {
+                    toggle_node(70 + 20 * index);
+                }
+            }
+
+            function notes_ready() {
+                gsap.to(".js-envelop-content", {
+                    height: "110%",
+                    duration: 0.5,
+                });
+
+                notes.forEach((note, i) =>
+                    note.addEventListener("click", (evt) => show_or_hide_note(evt.currentTarget, i))
+                );
+            }
+
+            function set_up_paper() {
+                gsap.set(".js-up-paper", {
+                    bottom: "97%",
+                    rotation: 180,
+                    zIndex: 200,
+                    clipPath: "polygon(0% 0%, 100% 0%, 50% 61%)",
+                    onComplete: notes_ready,
+                });
+            }
+
+            function envelop_transition() {
+                gsap.to(".js-up-paper", {
+                    bottom: "1%",
+                    duration: 0.25,
+                    onComplete: set_up_paper,
+                });
+
+                document.querySelector(".js-up-paper").removeAttribute("title");
+                document.querySelector(".js-up-paper").removeEventListener("click", envelop_transition);
+                document.querySelector(".js-up-paper").classList.remove("cursor");
+            }
+
+            function sticker() {
+                gsap.set(".js-sticker", {
+                    width: "20%",
+                    left: "-80%",
+                    backgroundRepeat: "no-repeat",
+                    duration: 0.25,
+                    onComplete: () => {
+                        document.querySelector(".envelop").classList.remove("scissors");
+                        document.querySelector(".js-sticker").removeEventListener("click", sticker);
+
+                        document
+                            .querySelector(".js-up-paper")
+                            .setAttribute("title", "Click para abrir a carta");
+                        document.querySelector(".js-up-paper").addEventListener("click", envelop_transition);
+                        document.querySelector(".js-up-paper").classList.add("cursor");
+                    },
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", add_notes);
+            document.querySelector(".js-sticker").addEventListener("click", sticker);
+
+            window.onresize = resize_notes;
+        </script>
+    </body>
+</html>
